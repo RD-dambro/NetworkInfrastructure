@@ -1,0 +1,7 @@
+/etc/init.d/networking restart
+
+ip r add default via 1.0.1.4
+ip r add 1.0.1.14/31 via 1.0.1.7
+ip r add 192.168.0.0/27 via 1.0.1.7
+
+/etc/init.d/quagga start

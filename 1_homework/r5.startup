@@ -1,0 +1,13 @@
+/etc/init.d/networking restart
+
+dpkg -i /var/cache/apt/archives/*.deb
+apt install -f udhcpd
+
+echo "" > /etc/default/udhcpd
+
+/etc/init.d/udhcpd start
+
+
+ip r add default via 1.0.1.14
+
+/etc/init.d/quagga start
